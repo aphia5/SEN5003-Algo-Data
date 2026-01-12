@@ -1,53 +1,50 @@
 import java.util.ArrayList;
 
-public class LinearSerchClass {
+public class LinearSearchClass {
 
     public static String linearSearchFT(ArrayList<String> list, String FromTo, String From, String Date) {
         boolean found = false;
         for (int i = 0; i < list.size(); i++) {
             String val = list.get(i);
-            if (val.startsWith(FromTo) == true) {
-                System.out.println(val + " is avaliable");
+            if (val.startsWith(FromTo)) {
+                System.out.println(val + " is available");
                 found = true;
             }
         }
-        if (found == false){
-            System.out.println(FromTo+ " is not avalible");
+        if (!found){
+            System.out.println(FromTo + " is not available");
             linearSearchF(list, From, Date);
         }
         return null;
     }
 
     public static String linearSearchF(ArrayList<String> list, String From, String Date) {
-        boolean found1 = false;
+        boolean found = false;
         for (int i = 0; i < list.size(); i++) {
-            String val = list.get(i);
-            if (val.startsWith(From) == true) {
-                System.out.println(val + " is avaliable");
-                found1 = true;
+            if (list.get(i).startsWith(From)) {
+                System.out.println(list.get(i) + " is available");
+                found = true;
             }
         }
-        if (found1 == false){
-            System.out.println("No flights from " + From + " are avaliable");
+        if (!found){
+            System.out.println("No flights from " + From + " are available");
             linearSearchD(list, Date);
         }
         return null;
     }
 
     public static String linearSearchD(ArrayList<String> list, String Date) {
-        boolean found2 = false;
-        System.out.println("Avalible flights on " + Date + " are:");
+        boolean found = false;
+        System.out.println("Available flights on " + Date + " are:");
         for (int i = 0; i < list.size(); i++) {
-            String val = list.get(i);
-            if (val.endsWith(Date) == true) {
-                System.out.println(val);
-                found2 = true;
+            if (list.get(i).endsWith(Date)) {
+                System.out.println(list.get(i));
+                found = true;
             }
         }
-        if (found2 == false){
-            System.out.println("No flights satisfying user critera are avaliable");
+        if (!found){
+            System.out.println("No flights satisfying user criteria are available");
         }
         return null;
     }
-
 }
