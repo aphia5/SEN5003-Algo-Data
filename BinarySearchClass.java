@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
-
 public class BinarySearchClass {
-
-
     public static String binarySearchFTD(ArrayList<String> list, String FromToDate, String FromTo, String From, String Date) {
         int start = 0;
         int end = list.size() - 1;
@@ -13,7 +10,7 @@ public class BinarySearchClass {
             String midVal = list.get(mid);
 
             if (FromToDate.compareTo(midVal) == 0) {
-                System.out.println(midVal + " is avaliable");
+                System.out.println(midVal + " is available");
                 return midVal;
             }
             if (FromToDate.compareTo(midVal) < 0) {
@@ -23,9 +20,8 @@ public class BinarySearchClass {
                 start = mid + 1;
             }
         }
-        System.out.println(FromToDate + " is not avaliable");
-        LinearSerchClass.linearSearchFT(list, FromTo, From, Date);
+        System.out.println(FromToDate + " is not available");
+        LinearSearchClass.linearSearchFT(list, FromTo, From, Date);
         return null;
     }
-
 }
